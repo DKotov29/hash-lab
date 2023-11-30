@@ -1,8 +1,8 @@
 use charts::{Chart, ScaleBand, ScaleLinear, VerticalBarView};
 
 pub fn chhhart(vec: &Vec<(String, f32)>, file_name: &str) {
-    let width = 2000;
-    let height = 1000;
+    let width = 4000;
+    let height = 2000;
     let (top, right, bottom, left) = (70, 10, 50, 60);
     let x = ScaleBand::new()
         .set_domain(vec.iter().map(|d| d.0.clone()).collect())
