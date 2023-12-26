@@ -1,7 +1,12 @@
+extern crate core;
+
 mod add_natural_attack;
 mod r#macro;
 mod gross;
 mod chart_print;
+mod lab2;
+mod haha2;
+mod haha3;
 
 use crypto::digest::Digest;
 use crypto::sha2::Sha224;
@@ -9,22 +14,24 @@ use distrs::Normal;
 
 
 fn main() {
+    haha3::main();
+    return;
     let o = "DavydiukDanylOleksandrovich";
 
     // let (hash, iteration) = add_natural_attack::att("DavydiukDanylOleksandrovich");
 
     {
-        // let mut vec1 = Vec::new();
-        // let iterations = 100usize;
-        // for i in 0..=iterations {
-        //     let i = i.to_string();
-        //     let gross = format!("{o}{i}");
-        //
-        //     let (hash, iteration) = add_natural_attack::att(gross.as_str());
-        //     vec1.push((i, iteration));
-        // }
-        // chart_print::chhhart(&vec1.iter().map(|(s, u)| (s.clone(), *u as f32)).collect(), "image1_1.svg");
-        // md(vec1.iter().map(|(_, io2)| *io2));
+        let mut vec1 = Vec::new();
+        let iterations = 100usize;
+        for i in 0..=iterations {
+            let i = i.to_string();
+            let gross = format!("{o}{i}");
+
+            let (hash, iteration) = add_natural_attack::att(gross.as_str());
+            vec1.push((i, iteration));
+        }
+        chart_print::chhhart(&vec1.iter().map(|(s, u)| (s.clone(), *u as f32)).collect(), "image1_1.svg");
+        md(vec1.iter().map(|(_, io2)| *io2));
     }
 
     {
